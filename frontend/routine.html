@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>My Routine | DailyRoutine</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<style>
+
+.routine-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.calendar {
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    margin-bottom:25px;
+}
+
+.day {
+    min-width:75px;
+    padding:13px;
+    text-align:center;
+    background:#111114;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:12px;
+}
+
+.day span {
+    display:block;
+    color:#777;
+    font-size:9px;
+    margin-bottom:7px;
+}
+
+.day strong {
+    font-size:17px;
+}
+
+.day.active {
+    background:#8b5cf6;
+    border-color:#8b5cf6;
+}
+
+.day.active span {
+    color:#ddd;
+}
+
+.routine-card {
+    background:#111114;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.routine-time {
+    width:70px;
+    color:#8b5cf6;
+    font-size:11px;
+    font-weight:600;
+}
+
+.routine-info {
+    flex:1;
+}
+
+.routine-info h3 {
+    font-size:13px;
+}
+
+.routine-info p {
+    color:#777;
+    font-size:10px;
+    margin-top:5px;
+}
+
+.delete {
+    border:0;
+    background:none;
+    color:#666;
+    font-size:17px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+
+<div class="logo">
+<div class="logo-icon">✓</div>
+<div>
+<strong>DailyRoutine</strong>
+<small>Productivity Hub</small>
+</div>
+</div>
+
+<nav class="nav">
+
+<a href="dashboard.html" class="nav-item">
+<span>⌂</span> Dashboard
+</a>
+
+<a href="routine.html" class="nav-item active">
+<span>✓</span> My Routine
+</a>
+
+<a href="plan-ai.html" class="nav-item">
+<span>✦</span> AI Planner
+</a>
+
+<a href="reports.html" class="nav-item">
+<span>◴</span> Reports
+</a>
+
+<div class="nav-title">MANAGE</div>
+
+<a href="settings.html" class="nav-item">
+<span>⚙</span> Settings
+</a>
+
+<a href="about.html" class="nav-item">
+<span>ⓘ</span> About
+</a>
+
+</nav>
+
+</aside>
+
+
+<main class="main">
+
+<header class="topbar">
+
+<button class="mobile-menu"
+onclick="toggleSidebar()">☰</button>
+
+<span class="page-label">
+MY ROUTINE
+</span>
+
+</header>
+
+
+<section class="content">
+
+<div class="routine-header">
+
+<div>
+
+<p class="eyebrow">YOUR DAILY PLAN</p>
+
+<h1>My Routine</h1>
+
+<p class="subtitle">
+Plan your day and stay consistent.
+</p>
+
+</div>
+
+<button class="primary-btn"
+onclick="addRoutine()">
+
+＋ Add Routine
+
+</button>
+
+</div>
+
+
+<div class="calendar">
+
+<div class="day">
+<span>MON</span>
+<strong>5</strong>
+</div>
+
+<div class="day">
+<span>TUE</span>
+<strong>6</strong>
+</div>
+
+<div class="day">
+<span>WED</span>
+<strong>7</strong>
+</div>
+
+<div class="day active">
+<span>THU</span>
+<strong>8</strong>
+</div>
+
+<div class="day">
+<span>FRI</span>
+<strong>9</strong>
+</div>
+
+<div class="day">
+<span>SAT</span>
+<strong>10</strong>
+</div>
+
+<div class="day">
+<span>SUN</span>
+<strong>11</strong>
+</div>
+
+</div>
+
+
+<div id="routineList">
+
+<div class="routine-card">
+
+<div class="routine-time">
+07:00 AM
+</div>
+
+<div class="routine-info">
+<h3>Morning Exercise</h3>
+<p>Health · 45 minutes</p>
+</div>
+
+<button class="delete">⋮</button>
+
+</div>
+
+
+<div class="routine-card">
+
+<div class="routine-time">
+09:00 AM
+</div>
+
+<div class="routine-info">
+<h3>MPSC Study</h3>
+<p>Study · 2 hours</p>
+</div>
+
+<button class="delete">⋮</button>
+
+</div>
+
+
+<div class="routine-card">
+
+<div class="routine-time">
+12:00 PM
+</div>
+
+<div class="routine-info">
+<h3>Office Work</h3>
+<p>Work · 5 hours</p>
+</div>
+
+<button class="delete">⋮</button>
+
+</div>
+
+
+<div class="routine-card">
+
+<div class="routine-time">
+07:00 PM
+</div>
+
+<div class="routine-info">
+<h3>English Practice</h3>
+<p>Learning · 30 minutes</p>
+</div>
+
+<button class="delete">⋮</button>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="../js/main.js"></script>
+
+<script>
+
+function addRoutine() {
+
+    const name = prompt("Enter routine name:");
+
+    if(!name) return;
+
+    const time = prompt("Enter time:");
+
+    if(!time) return;
+
+    const container =
+        document.getElementById("routineList");
+
+    const card =
+        document.createElement("div");
+
+    card.className = "routine-card";
+
+    card.innerHTML = `
+
+        <div class="routine-time">
+            ${time}
+        </div>
+
+        <div class="routine-info">
+
+            <h3>${name}</h3>
+
+            <p>
+                Personal · New routine
+            </p>
+
+        </div>
+
+        <button
+            class="delete"
+            onclick="this.parentElement.remove()">
+            ×
+        </button>
+
+    `;
+
+    container.appendChild(card);
+}
+
+</script>
+
+</body>
+</html>

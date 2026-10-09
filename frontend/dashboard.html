@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DailyRoutine | Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <span>DAILY<span class="brand-yellow">ROUTINE</span>.</span>
+        </div>
+
+        <div class="sidebar-label">WORKSPACE</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item active">
+                <span class="nav-icon">▦</span>
+                <span>Today</span>
+            </a>
+
+            <a href="routine.html" class="nav-item">
+                <span class="nav-icon">◫</span>
+                <span>Routines</span>
+            </a>
+
+            <a href="routine.html#habits" class="nav-item">
+                <span class="nav-icon">♨</span>
+                <span>Habits</span>
+            </a>
+
+            <button class="nav-item nav-button" id="focusNav">
+                <span class="nav-icon">◉</span>
+                <span>Focus</span>
+            </button>
+
+            <a href="reports.html" class="nav-item">
+                <span class="nav-icon">▥</span>
+                <span>Analytics</span>
+            </a>
+
+            <a href="plan-ai.html" class="nav-item ai-nav">
+                <span class="nav-icon">✦</span>
+                <span>AI Planner</span>
+                <span class="ai-badge">AI</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <!-- USER -->
+        <div class="sidebar-bottom">
+
+            <div class="user-card">
+
+                <div class="user-avatar" id="userAvatar">A</div>
+
+                <div class="user-info">
+                    <strong id="sidebarUserName">Alex Morgan</strong>
+                    <span id="sidebarUserEmail">alex@example.com</span>
+                </div>
+
+                <button class="logout-btn" id="logoutBtn" title="Logout">
+                    ↪
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="breadcrumb">
+                <span>DAILYROUTINE</span>
+                <b>/</b>
+                <strong>TODAY</strong>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="live-clock" id="liveClock">
+                    00:00:00
+                </div>
+
+                <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+
+                <button class="theme-btn" id="themeToggle">
+                    ☾
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header reveal">
+
+                <div>
+                    <div class="date-label" id="currentDate">
+                        THURSDAY · OCTOBER 8, 2026
+                    </div>
+
+                    <h1>
+                        Good evening,
+                        <span id="mainUserName">Alex</span>
+                    </h1>
+
+                    <p>
+                        Here's your mission control for the day.
+                    </p>
+                </div>
+
+                <div class="header-actions">
+
+                    <button class="secondary-btn" id="focusBtn">
+                        ◉ Focus
+                    </button>
+
+                    <button class="primary-btn" id="addBlockBtn">
+                        + Add block
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TOP STATS ================= -->
+
+            <div class="dashboard-grid">
+
+                <!-- COMPLETION -->
+
+                <div class="card completion-card reveal delay-1">
+
+                    <div class="card-top">
+                        <span>DAY COMPLETION</span>
+                        <span class="card-menu">•••</span>
+                    </div>
+
+                    <div class="completion-content">
+
+                        <div class="progress-ring" id="progressRing">
+
+                            <div class="progress-ring-inner">
+
+                                <strong id="completionPercent">
+                                    0%
+                                </strong>
+
+                                <span>
+                                    COMPLETE
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="completion-info">
+
+                            <strong id="completedBlocks">
+                                0 / 8
+                            </strong>
+
+                            <span>blocks completed</span>
+
+                            <div class="mini-progress">
+                                <div id="miniProgress"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOCUS -->
+
+                <div class="card stat-card reveal delay-2">
+
+                    <div class="card-top">
+                        <span>FOCUS TODAY</span>
+                        <span class="stat-icon">◉</span>
+                    </div>
+
+                    <div class="stat-number" id="focusMinutes">
+                        0m
+                    </div>
+
+                    <div class="stat-description">
+                        <span id="focusSessions">0 sessions</span>
+                        <span class="green-dot"></span>
+                        Deep work
+                    </div>
+
+                </div>
+
+
+                <!-- STREAK -->
+
+                <div class="card stat-card reveal delay-3">
+
+                    <div class="card-top">
+                        <span>TOP STREAK</span>
+                        <span class="fire-icon">♨</span>
+                    </div>
+
+                    <div class="stat-number">
+                        <span id="streakNumber">0</span>
+                    </div>
+
+                    <div class="stat-description">
+                        days in a row
+                    </div>
+
+                </div>
+
+
+                <!-- HABITS -->
+
+                <div class="card habits-card reveal delay-4">
+
+                    <div class="card-top">
+
+                        <div>
+                            <span>HABITS</span>
+                            <small> · CHECK IN</small>
+                        </div>
+
+                        <a href="routine.html#habits">
+                            View all →
+                        </a>
+
+                    </div>
+
+                    <div class="habit-list" id="habitList">
+                        <!-- JS inserts habits -->
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SCHEDULE ================= -->
+
+                <div class="card schedule-card reveal delay-5">
+
+                    <div class="schedule-header">
+
+                        <div>
+
+                            <div class="schedule-title">
+                                TIME-BLOCKED SCHEDULE
+                            </div>
+
+                            <div class="schedule-subtitle">
+                                Today's timeline
+                            </div>
+
+                        </div>
+
+                        <div class="planned-time">
+                            <strong id="plannedHours">
+                                5.6h
+                            </strong>
+                            planned
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline" id="timeline">
+                        <!-- JS creates schedule -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= ADD BLOCK MODAL ================= -->
+
+<div class="modal-overlay" id="addBlockModal">
+
+    <div class="modal">
+
+        <button class="modal-close" id="closeModal">
+            ×
+        </button>
+
+        <div class="modal-label">
+            NEW TIME BLOCK
+        </div>
+
+        <h2>
+            Add to your day
+        </h2>
+
+        <form id="addBlockForm">
+
+            <div class="form-group">
+
+                <label>Task name</label>
+
+                <input
+                    type="text"
+                    id="taskName"
+                    placeholder="e.g. Read MPSC notes"
+                    required
+                >
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Start time</label>
+
+                    <input
+                        type="time"
+                        id="taskStart"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>End time</label>
+
+                    <input
+                        type="time"
+                        id="taskEnd"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Category</label>
+
+                <select id="taskCategory">
+
+                    <option value="work">Work</option>
+                    <option value="health">Health</option>
+                    <option value="learning">Learning</option>
+                    <option value="personal">Personal</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Notes</label>
+
+                <input
+                    type="text"
+                    id="taskNotes"
+                    placeholder="Optional notes"
+                >
+
+            </div>
+
+            <button class="primary-btn full-btn" type="submit">
+                Add block +
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOCUS MODAL ================= -->
+
+<div class="modal-overlay" id="focusModal">
+
+    <div class="focus-modal">
+
+        <button class="modal-close" id="closeFocusModal">
+            ×
+        </button>
+
+        <div class="modal-label">
+            FOCUS TERMINAL
+        </div>
+
+        <h2>
+            Deep Work
+        </h2>
+
+        <div class="focus-timer" id="focusTimer">
+            25:00
+        </div>
+
+        <p>
+            Put your phone away. One task. Full attention.
+        </p>
+
+        <div class="focus-controls">
+
+            <button class="primary-btn" id="startFocus">
+                Start
+            </button>
+
+            <button class="secondary-btn" id="resetFocus">
+                Reset
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast">
+    <span>✓</span>
+    <p id="toastMessage">Saved successfully</p>
+</div>
+
+
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Reports | DailyRoutine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<style>
+
+.report-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.report-card {
+    background:#111114;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:20px;
+}
+
+.report-card span {
+    color:#777;
+    font-size:10px;
+}
+
+.report-card strong {
+    display:block;
+    font-size:28px;
+    margin-top:12px;
+}
+
+.chart {
+    height:260px;
+    background:#111114;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:25px;
+}
+
+.chart h2 {
+    font-size:14px;
+}
+
+.bars {
+    height:180px;
+    display:flex;
+    align-items:end;
+    gap:15px;
+    padding-top:25px;
+}
+
+.bar {
+    flex:1;
+    background:linear-gradient(
+        to top,
+        #8b5cf6,
+        #6366f1
+    );
+    border-radius:5px 5px 0 0;
+}
+
+.bar:nth-child(1){height:45%}
+.bar:nth-child(2){height:65%}
+.bar:nth-child(3){height:50%}
+.bar:nth-child(4){height:80%}
+.bar:nth-child(5){height:70%}
+.bar:nth-child(6){height:90%}
+.bar:nth-child(7){height:75%}
+
+@media(max-width:800px){
+    .report-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-icon">✓</div>
+
+<div>
+<strong>DailyRoutine</strong>
+<small>Productivity Hub</small>
+</div>
+
+</div>
+
+<nav class="nav">
+
+<a href="dashboard.html" class="nav-item">
+<span>⌂</span> Dashboard
+</a>
+
+<a href="routine.html" class="nav-item">
+<span>✓</span> My Routine
+</a>
+
+<a href="plan-ai.html" class="nav-item">
+<span>✦</span> AI Planner
+</a>
+
+<a href="reports.html" class="nav-item active">
+<span>◴</span> Reports
+</a>
+
+<div class="nav-title">MANAGE</div>
+
+<a href="settings.html" class="nav-item">
+<span>⚙</span> Settings
+</a>
+
+</nav>
+
+</aside>
+
+
+<main class="main">
+
+<header class="topbar">
+
+<button class="mobile-menu"
+onclick="toggleSidebar()">☰</button>
+
+<span class="page-label">
+REPORTS & ANALYTICS
+</span>
+
+</header>
+
+
+<section class="content">
+
+<div class="welcome">
+
+<div>
+
+<p class="eyebrow">YOUR PERFORMANCE</p>
+
+<h1>Productivity Reports</h1>
+
+<p class="subtitle">
+Understand your habits and improve your consistency.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="report-grid">
+
+<div class="report-card">
+<span>COMPLETION RATE</span>
+<strong>82%</strong>
+</div>
+
+<div class="report-card">
+<span>TASKS COMPLETED</span>
+<strong>47</strong>
+</div>
+
+<div class="report-card">
+<span>FOCUS HOURS</span>
+<strong>26.5h</strong>
+</div>
+
+</div>
+
+
+<div class="chart">
+
+<h2>Weekly Productivity</h2>
+
+<div class="bars">
+
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

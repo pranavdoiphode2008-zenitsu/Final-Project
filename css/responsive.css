@@ -1,0 +1,161 @@
+/* ================= TABLET ================= */
+
+@media (max-width: 1150px) {
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .completion-card {
+        grid-column: span 2;
+    }
+
+    .habits-card {
+        grid-column: span 2;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    :root {
+        --sidebar-width: 260px;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .mobile-overlay {
+        position: fixed;
+        inset: 0;
+
+        background: rgba(0,0,0,0.65);
+
+        z-index: 90;
+
+        display: none;
+    }
+
+    .mobile-overlay.show {
+        display: block;
+    }
+
+    .main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .dashboard-content {
+        padding: 28px 20px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .header-actions button {
+        flex: 1;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .completion-card,
+    .habits-card,
+    .schedule-card {
+        grid-column: auto;
+    }
+
+    .completion-content {
+        justify-content: center;
+    }
+
+    .timeline-row {
+        grid-template-columns: 48px 1fr 40px;
+        gap: 10px;
+    }
+
+    .timeline::before {
+        left: 58px;
+    }
+
+    .timeline-duration {
+        display: none;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 500px) {
+
+    .breadcrumb {
+        display: none;
+    }
+
+    .live-clock {
+        font-size: 9px;
+    }
+
+    .dashboard-content {
+        padding: 22px 14px;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+    .completion-card {
+        min-height: auto;
+    }
+
+    .completion-content {
+        flex-direction: column;
+    }
+
+    .progress-ring {
+        width: 125px;
+        height: 125px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .modal {
+        padding: 24px 18px;
+    }
+
+    .focus-timer {
+        font-size: 52px;
+    }
+
+}

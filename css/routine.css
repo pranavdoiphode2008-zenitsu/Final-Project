@@ -1,0 +1,239 @@
+/* =========================================================
+   ROUTINE PAGE
+   ========================================================= */
+
+.routine-page {
+    padding: 30px 0 60px;
+}
+
+/* =========================================================
+   ROUTINE HEADER
+   ========================================================= */
+
+.routine-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.routine-header h1 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.routine-header p {
+    color: var(--text-light);
+}
+
+/* =========================================================
+   DATE SELECTOR
+   ========================================================= */
+
+.date-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    overflow-x: auto;
+}
+
+.date-item {
+    min-width: 75px;
+
+    padding: 12px 10px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    background: white;
+    border: 1px solid var(--border);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.date-item:hover {
+    border-color: var(--primary);
+}
+
+.date-item.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.date-day {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.date-number {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   TASK LIST
+   ========================================================= */
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 17px 18px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    transition: var(--transition);
+}
+
+.task-item:hover {
+    transform: translateX(3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.task-item.completed {
+    opacity: 0.65;
+}
+
+.task-item.completed .task-title {
+    text-decoration: line-through;
+}
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.task-checkbox {
+    width: 22px;
+    height: 22px;
+
+    accent-color: var(--primary);
+
+    cursor: pointer;
+}
+
+/* =========================================================
+   TASK INFORMATION
+   ========================================================= */
+
+.task-info {
+    flex: 1;
+}
+
+.task-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.task-description {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 3px;
+}
+
+.task-time {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* =========================================================
+   PRIORITY
+   ========================================================= */
+
+.priority {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.priority-low {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.priority-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.priority-high {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* =========================================================
+   ADD TASK
+   ========================================================= */
+
+.add-task-card {
+    margin-top: 20px;
+
+    padding: 22px;
+
+    background: white;
+
+    border: 1px dashed #cbd5e1;
+    border-radius: 15px;
+}
+
+.add-task-card h3 {
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   ROUTINE SUMMARY
+   ========================================================= */
+
+.routine-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.summary-box {
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 14px;
+    border: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.summary-box strong {
+    display: block;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.summary-box span {
+    font-size: 12px;
+    color: var(--text-light);
+}

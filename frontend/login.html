@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Login to Daily Routine Management System">
+
+    <title>Login | Daily Routine</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+<body class="auth-page">
+
+
+<!-- =========================================================
+     AUTH PAGE BACKGROUND
+========================================================= -->
+
+<div class="auth-background">
+
+    <div class="auth-glow auth-glow-one"></div>
+
+    <div class="auth-glow auth-glow-two"></div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOP LOGO
+========================================================= -->
+
+<header class="auth-header">
+
+    <a href="index.html"
+       class="logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+        </div>
+
+        <div class="logo-text">
+
+            <span>Daily</span> Routine
+
+        </div>
+
+    </a>
+
+
+    <a href="index.html"
+       class="back-home">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back to Home
+
+    </a>
+
+</header>
+
+
+
+<!-- =========================================================
+     LOGIN CONTAINER
+========================================================= -->
+
+<main class="auth-container">
+
+    <div class="auth-card">
+
+
+        <!-- =================================================
+             LEFT SIDE
+        ================================================== -->
+
+        <div class="auth-info">
+
+            <div class="auth-info-icon">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+            </div>
+
+
+            <span class="auth-label">
+                WELCOME BACK
+            </span>
+
+
+            <h1>
+                Stay on track
+                <span>every day.</span>
+            </h1>
+
+
+            <p>
+                Organize your routine, complete your tasks
+                and keep moving toward your goals.
+            </p>
+
+
+            <!-- Benefits -->
+
+            <div class="auth-benefits">
+
+                <div class="auth-benefit">
+
+                    <div class="benefit-icon">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Manage your routine
+                        </strong>
+
+                        <span>
+                            Keep all your daily tasks organized.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-benefit">
+
+                    <div class="benefit-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Track your progress
+                        </strong>
+
+                        <span>
+                            See how productive your day is.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-benefit">
+
+                    <div class="benefit-icon">
+
+                        <i class="fa-solid fa-robot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Plan with AI
+                        </strong>
+
+                        <span>
+                            Create smarter daily plans.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RIGHT SIDE LOGIN FORM
+        ================================================== -->
+
+        <div class="auth-form-section">
+
+
+            <div class="auth-form-header">
+
+                <h2>
+                    Welcome back!
+                </h2>
+
+                <p>
+                    Login to continue to your dashboard.
+                </p>
+
+            </div>
+
+
+            <!-- Error / Success Message -->
+
+            <div id="loginMessage"
+                 class="form-message"
+                 style="display:none;">
+
+            </div>
+
+
+
+            <!-- Login Form -->
+
+            <form id="loginForm"
+                  class="auth-form">
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        Email Address
+
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope input-icon"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="password">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Password
+
+                        </label>
+
+
+                        <a href="#"
+                           id="forgotPassword">
+
+                            Forgot password?
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Remember Me -->
+
+                <div class="remember-row">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            name="rememberMe"
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+                        Remember me
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- Login Button -->
+
+                <button
+                    type="submit"
+                    class="auth-submit-btn"
+                    id="loginButton">
+
+                    <span id="loginButtonText">
+
+                        Login to Dashboard
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- Register -->
+
+            <div class="auth-divider">
+
+                <span>
+                    OR
+                </span>
+
+            </div>
+
+
+            <p class="auth-switch">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create an account
+                </a>
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     FORGOT PASSWORD MODAL
+========================================================= -->
+
+<div class="modal-overlay"
+     id="forgotModal"
+     style="display:none;">
+
+    <div class="small-modal">
+
+
+        <button
+            class="modal-close"
+            id="closeForgotModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-key"></i>
+
+        </div>
+
+
+        <h3>
+            Forgot your password?
+        </h3>
+
+
+        <p>
+            Enter your email address and we'll help
+            you reset your password.
+        </p>
+
+
+        <form id="forgotPasswordForm">
+
+            <div class="form-group">
+
+                <label for="forgotEmail">
+
+                    Email Address
+
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-envelope input-icon"></i>
+
+                    <input
+                        type="email"
+                        id="forgotEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="auth-submit-btn">
+
+                Send Reset Request
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/*
+=========================================================
+PASSWORD SHOW / HIDE
+=========================================================
+*/
+
+const passwordInput =
+    document.getElementById("password");
+
+const passwordToggle =
+    document.getElementById("passwordToggle");
+
+
+if (passwordToggle) {
+
+    passwordToggle.addEventListener(
+        "click",
+        function () {
+
+            if (
+                passwordInput.type === "password"
+            ) {
+
+                passwordInput.type = "text";
+
+                passwordToggle.innerHTML =
+                    '<i class="fa-solid fa-eye-slash"></i>';
+
+                passwordToggle.setAttribute(
+                    "aria-label",
+                    "Hide password"
+                );
+
+            } else {
+
+                passwordInput.type = "password";
+
+                passwordToggle.innerHTML =
+                    '<i class="fa-solid fa-eye"></i>';
+
+                passwordToggle.setAttribute(
+                    "aria-label",
+                    "Show password"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/*
+=========================================================
+LOGIN FORM
+=========================================================
+*/
+
+const loginForm =
+    document.getElementById("loginForm");
+
+const loginMessage =
+    document.getElementById("loginMessage");
+
+const loginButton =
+    document.getElementById("loginButton");
+
+const loginButtonText =
+    document.getElementById("loginButtonText");
+
+
+if (loginForm) {
+
+    loginForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document.getElementById("email")
+                .value
+                .trim();
+
+
+            const password =
+                document.getElementById("password")
+                .value;
+
+
+            const rememberMe =
+                document.getElementById("rememberMe")
+                .checked;
+
+
+
+            /*
+            ---------------------------------------------
+            BASIC VALIDATION
+            ---------------------------------------------
+            */
+
+            if (!email || !password) {
+
+                showLoginMessage(
+                    "Please enter your email and password.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+
+            /*
+            ---------------------------------------------
+            SHOW LOADING
+            ---------------------------------------------
+            */
+
+            loginButton.disabled = true;
+
+            loginButtonText.textContent =
+                "Logging in...";
+
+
+
+            /*
+            ---------------------------------------------
+            BACKEND REQUEST
+            ---------------------------------------------
+
+            Later this will connect to:
+
+            POST /api/auth/login
+
+            ---------------------------------------------
+            */
+
+            try {
+
+                /*
+                IMPORTANT:
+
+                Backend connection will be added
+                after we create Node.js + Express.
+
+                For now this is a temporary demo.
+
+                */
+
+                await new Promise(
+                    resolve =>
+                        setTimeout(resolve, 800)
+                );
+
+
+                /*
+                Temporary demo login.
+
+                REMOVE this section when backend
+                authentication is connected.
+                */
+
+                if (
+                    email === "demo@gmail.com" &&
+                    password === "123456"
+                ) {
+
+                    if (rememberMe) {
+
+                        localStorage.setItem(
+                            "rememberMe",
+                            "true"
+                        );
+
+                    }
+
+                    sessionStorage.setItem(
+                        "demoUser",
+                        "true"
+                    );
+
+
+                    showLoginMessage(
+                        "Login successful! Redirecting...",
+                        "success"
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "dashboard.html";
+
+                        },
+                        700
+                    );
+
+
+                } else {
+
+                    showLoginMessage(
+                        "Invalid email or password. For testing use demo@gmail.com / 123456.",
+                        "error"
+                    );
+
+                }
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                showLoginMessage(
+                    "Something went wrong. Please try again.",
+                    "error"
+                );
+
+            } finally {
+
+                loginButton.disabled = false;
+
+                loginButtonText.textContent =
+                    "Login to Dashboard";
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/*
+=========================================================
+MESSAGE FUNCTION
+=========================================================
+*/
+
+function showLoginMessage(
+    message,
+    type
+) {
+
+    if (!loginMessage) {
+        return;
+    }
+
+
+    loginMessage.textContent =
+        message;
+
+
+    loginMessage.className =
+        "form-message " + type;
+
+
+    loginMessage.style.display =
+        "block";
+
+}
+
+
+
+/*
+=========================================================
+FORGOT PASSWORD MODAL
+=========================================================
+*/
+
+const forgotPassword =
+    document.getElementById("forgotPassword");
+
+const forgotModal =
+    document.getElementById("forgotModal");
+
+const closeForgotModal =
+    document.getElementById("closeForgotModal");
+
+
+if (forgotPassword) {
+
+    forgotPassword.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            forgotModal.style.display =
+                "flex";
+
+        }
+    );
+
+}
+
+
+if (closeForgotModal) {
+
+    closeForgotModal.addEventListener(
+        "click",
+        function () {
+
+            forgotModal.style.display =
+                "none";
+
+        }
+    );
+
+}
+
+
+/*
+Close modal by clicking outside
+*/
+
+if (forgotModal) {
+
+    forgotModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === forgotModal
+            ) {
+
+                forgotModal.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/*
+=========================================================
+FORGOT PASSWORD FORM
+=========================================================
+*/
+
+const forgotPasswordForm =
+    document.getElementById(
+        "forgotPasswordForm"
+    );
+
+
+if (forgotPasswordForm) {
+
+    forgotPasswordForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document.getElementById(
+                    "forgotEmail"
+                ).value.trim();
+
+
+            if (!email) {
+                return;
+            }
+
+
+            alert(
+                "Password reset functionality will be connected to the backend."
+            );
+
+
+            forgotModal.style.display =
+                "none";
+
+        }
+    );
+
+}
+
+</script>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/animations.js"></script>
+
+</body>
+</html>

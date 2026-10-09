@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AI Planner | DailyRoutine</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<style>
+
+.ai-page {
+    max-width:850px;
+    margin:auto;
+}
+
+.ai-hero {
+    text-align:center;
+    padding:55px 20px;
+}
+
+.ai-big-icon {
+    width:70px;
+    height:70px;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    border-radius:20px;
+    font-size:32px;
+    color:#c4b5fd;
+    background:rgba(139,92,246,.13);
+    border:1px solid rgba(139,92,246,.2);
+}
+
+.ai-hero h1 {
+    margin-top:20px;
+    font-size:32px;
+}
+
+.ai-hero p {
+    color:#888;
+    font-size:12px;
+    max-width:500px;
+    margin:12px auto;
+    line-height:1.7;
+}
+
+.ai-form {
+    background:#111114;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:17px;
+    padding:25px;
+}
+
+.field {
+    margin-bottom:20px;
+}
+
+.field label {
+    display:block;
+    font-size:10px;
+    color:#aaa;
+    margin-bottom:8px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width:100%;
+    padding:12px;
+    background:#0b0b0e;
+    color:white;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:9px;
+    outline:none;
+}
+
+.field textarea {
+    min-height:100px;
+    resize:vertical;
+}
+
+.generate {
+    width:100%;
+}
+
+#result {
+    display:none;
+    margin-top:20px;
+}
+
+.ai-result {
+    padding:18px;
+    background:#16131e;
+    border:1px solid rgba(139,92,246,.2);
+    border-radius:12px;
+}
+
+.ai-result h3 {
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.ai-result p {
+    font-size:11px;
+    color:#aaa;
+    line-height:1.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+
+<div class="logo">
+<div class="logo-icon">✓</div>
+
+<div>
+<strong>DailyRoutine</strong>
+<small>Productivity Hub</small>
+</div>
+</div>
+
+<nav class="nav">
+
+<a href="dashboard.html" class="nav-item">
+<span>⌂</span> Dashboard
+</a>
+
+<a href="routine.html" class="nav-item">
+<span>✓</span> My Routine
+</a>
+
+<a href="plan-ai.html" class="nav-item active">
+<span>✦</span> AI Planner
+</a>
+
+<a href="reports.html" class="nav-item">
+<span>◴</span> Reports
+</a>
+
+<div class="nav-title">MANAGE</div>
+
+<a href="settings.html" class="nav-item">
+<span>⚙</span> Settings
+</a>
+
+</nav>
+
+</aside>
+
+
+<main class="main">
+
+<header class="topbar">
+
+<button class="mobile-menu"
+onclick="toggleSidebar()">☰</button>
+
+<span class="page-label">
+AI PLANNER
+</span>
+
+</header>
+
+
+<section class="content">
+
+<div class="ai-page">
+
+<div class="ai-hero">
+
+<div class="ai-big-icon">
+✦
+</div>
+
+<h1>AI Routine Planner</h1>
+
+<p>
+Tell us your goals and available time.
+DailyRoutine will create a personalized
+daily schedule for you.
+</p>
+
+</div>
+
+
+<div class="ai-form">
+
+<div class="field">
+
+<label>YOUR MAIN GOAL</label>
+
+<input
+id="goal"
+placeholder="Example: Prepare for MPSC exam">
+
+</div>
+
+
+<div class="field">
+
+<label>AVAILABLE HOURS</label>
+
+<select id="hours">
+
+<option>2 hours</option>
+<option>4 hours</option>
+<option>6 hours</option>
+<option>8 hours</option>
+<option>10 hours</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>YOUR PRIORITIES</label>
+
+<textarea
+id="priorities"
+placeholder="Example: MPSC, English speaking, exercise, office work"></textarea>
+
+</div>
+
+
+<button
+class="primary-btn generate"
+onclick="generatePlan()">
+
+✦ Generate My Plan
+
+</button>
+
+
+<div id="result">
+
+<div class="ai-result">
+
+<h3>Your Personalized Plan</h3>
+
+<p id="planText"></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<script src="../js/main.js"></script>
+
+<script>
+
+function generatePlan() {
+
+    const goal =
+        document.getElementById("goal").value ||
+        "your goals";
+
+    const hours =
+        document.getElementById("hours").value;
+
+    const priorities =
+        document.getElementById("priorities").value ||
+        "your priorities";
+
+    document.getElementById("planText").innerHTML = `
+
+        <strong>Morning</strong><br>
+        7:00 AM — Exercise<br>
+        7:30 AM — Breakfast<br><br>
+
+        <strong>Focused Study</strong><br>
+        9:00 AM — Work on ${goal}<br>
+        11:00 AM — Short break<br><br>
+
+        <strong>Afternoon</strong><br>
+        12:00 PM — Office / important work<br><br>
+
+        <strong>Evening</strong><br>
+        7:00 PM — Revision and English practice<br><br>
+
+        <strong>Priority:</strong>
+        ${priorities}<br><br>
+
+        Recommended focused time:
+        ${hours}.
+    `;
+
+    document.getElementById("result").style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>

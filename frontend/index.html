@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="DailyRoutine - Engineer your day. Build better habits, routines and productivity."
+    >
+
+    <title>DailyRoutine — Engineer Your Day</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/animations.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PAGE LOADER
+========================================================= -->
+
+<div class="page-loader" id="pageLoader">
+
+    <div class="loader-logo">
+        <span>✦</span>
+        DailyRoutine
+    </div>
+
+    <div class="loader-line">
+        <span></span>
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-icon">
+                <span>↯</span>
+            </div>
+
+            <span class="brand-name">
+                DAILY<span>ROUTINE</span>
+            </span>
+
+        </a>
+
+
+        <!-- DESKTOP NAV -->
+
+        <nav class="desktop-nav">
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#workflow">
+                How it works
+            </a>
+
+            <a href="#ai-planner">
+                AI Planner
+            </a>
+
+        </nav>
+
+
+        <!-- RIGHT NAV -->
+
+        <div class="nav-actions">
+
+            <button
+                class="theme-button"
+                id="themeButton"
+                aria-label="Change theme"
+            >
+                ☾
+            </button>
+
+
+            <a
+                href="login.html"
+                class="signin"
+            >
+                Sign in
+            </a>
+
+
+            <a
+                href="register.html"
+                class="nav-cta"
+            >
+                Get started
+            </a>
+
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+
+        <a href="#features">
+            Features
+        </a>
+
+        <a href="#workflow">
+            How it works
+        </a>
+
+        <a href="#ai-planner">
+            AI Planner
+        </a>
+
+        <a href="login.html">
+            Sign in
+        </a>
+
+        <a
+            href="register.html"
+            class="mobile-cta"
+        >
+            Get started
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero section-grid">
+
+
+    <div class="hero-glow"></div>
+
+
+    <div class="hero-container">
+
+
+        <!-- LEFT -->
+
+        <div class="hero-content reveal">
+
+
+            <div class="system-label">
+
+                <span class="system-icon">
+                    ✦
+                </span>
+
+                <span>
+                    // DAILY ROUTINE OPERATING SYSTEM
+                </span>
+
+            </div>
+
+
+            <h1>
+
+                Engineer your day.
+
+                <br>
+
+                <span>
+                    Ship your best self.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Time-blocked routines, habit streaks,
+                a focus terminal and an AI planner —
+                engineered into one precise command
+                center for your day.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="register.html"
+                    class="primary-button"
+                >
+
+                    Start building your day
+
+                    <span>→</span>
+
+                </a>
+
+
+                <button
+                    class="secondary-button"
+                    id="demoButton"
+                >
+
+                    Try the demo
+
+                </button>
+
+            </div>
+
+
+            <!-- HERO STATS -->
+
+            <div class="hero-stats">
+
+
+                <div class="hero-stat">
+
+                    <strong>
+                        7
+                    </strong>
+
+                    <span>
+                        integrated modules
+                    </span>
+
+                </div>
+
+
+                <div class="hero-stat">
+
+                    <strong>
+                        4
+                    </strong>
+
+                    <span>
+                        accent themes
+                    </span>
+
+                </div>
+
+
+                <div class="hero-stat">
+
+                    <strong>
+                        ∞
+                    </strong>
+
+                    <span>
+                        streak potential
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT - ROUTINE TERMINAL -->
+
+        <div class="hero-terminal reveal delay-2">
+
+
+            <div class="terminal-top">
+
+                <div class="terminal-title">
+
+                    <span class="live-dot"></span>
+
+                    TODAY · LIVE
+
+                </div>
+
+
+                <div class="terminal-count">
+
+                    <span id="completedCount">
+                        4
+                    </span>/6 shipped
+
+                </div>
+
+            </div>
+
+
+            <div class="terminal-body">
+
+
+                <!-- TASK 1 -->
+
+                <div class="terminal-task completed">
+
+                    <span class="task-time">
+                        06:30
+                    </span>
+
+                    <span class="task-line green"></span>
+
+                    <span class="task-name">
+                        Wake up & hydrate
+                    </span>
+
+                    <button
+                        class="task-check checked"
+                        onclick="toggleRoutineTask(this)"
+                    >
+                        ✓
+                    </button>
+
+                </div>
+
+
+                <!-- TASK 2 -->
+
+                <div class="terminal-task completed">
+
+                    <span class="task-time">
+                        07:00
+                    </span>
+
+                    <span class="task-line green"></span>
+
+                    <span class="task-name">
+                        Morning workout
+                    </span>
+
+                    <button
+                        class="task-check checked"
+                        onclick="toggleRoutineTask(this)"
+                    >
+                        ✓
+                    </button>
+
+                </div>
+
+
+                <!-- TASK 3 -->
+
+                <div class="terminal-task completed">
+
+                    <span class="task-time">
+                        08:00
+                    </span>
+
+                    <span class="task-line blue"></span>
+
+                    <span class="task-name">
+                        Deep work · AI refactor
+                    </span>
+
+                    <button
+                        class="task-check checked"
+                        onclick="toggleRoutineTask(this)"
+                    >
+                        ✓
+                    </button>
+
+                </div>
+
+
+                <!-- TASK 4 -->
+
+                <div class="terminal-task completed highlighted">
+
+                    <span class="task-time">
+                        12:30
+                    </span>
+
+                    <span class="task-line green"></span>
+
+                    <span class="task-name">
+                        Lunch & walk
+                    </span>
+
+                    <button
+                        class="task-check checked"
+                        onclick="toggleRoutineTask(this)"
+                    >
+                        ✓
+                    </button>
+
+                </div>
+
+
+                <!-- TASK 5 -->
+
+                <div class="terminal-task active-task">
+
+                    <span class="task-time">
+                        14:00
+                    </span>
+
+                    <span class="task-line orange"></span>
+
+                    <span class="task-name">
+                        Algorithm practice
+                    </span>
+
+                    <button
+                        class="task-check"
+                        onclick="toggleRoutineTask(this)"
+                    >
+                    </button>
+
+                </div>
+
+
+                <!-- TASK 6 -->
+
+                <div class="terminal-task">
+
+                    <span class="task-time">
+                        21:30
+                    </span>
+
+                    <span class="task-line blue"></span>
+
+                    <span class="task-name">
+                        Evening shutdown
+                    </span>
+
+                    <button
+                        class="task-check"
+                        onclick="toggleRoutineTask(this)"
+                    >
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TERMINAL BOTTOM -->
+
+            <div class="terminal-bottom">
+
+
+                <div class="progress-ring">
+
+                    <svg
+                        viewBox="0 0 100 100"
+                    >
+
+                        <circle
+                            class="ring-background"
+                            cx="50"
+                            cy="50"
+                            r="42"
+                        ></circle>
+
+                        <circle
+                            class="ring-progress"
+                            id="progressRing"
+                            cx="50"
+                            cy="50"
+                            r="42"
+                        ></circle>
+
+                    </svg>
+
+
+                    <div class="ring-text">
+
+                        <strong id="progressPercent">
+                            67%
+                        </strong>
+
+                        <span>
+                            COMPLETE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="streak">
+
+                    <span>
+                        🔥
+                    </span>
+
+                    <strong>
+                        14 day streak
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURE TICKER
+========================================================= -->
+
+<div class="feature-ticker">
+
+    <div class="ticker-track">
+
+        <span>✦ HABIT STREAKS</span>
+        <i>◆</i>
+
+        <span>POMODORO</span>
+        <i>◆</i>
+
+        <span>AI ROUTINES</span>
+        <i>◆</i>
+
+        <span>HEATMAPS</span>
+        <i>◆</i>
+
+        <span>ANALYTICS</span>
+        <i>◆</i>
+
+        <span>DARK MODE</span>
+        <i>◆</i>
+
+        <span>ACCENT THEMES</span>
+        <i>◆</i>
+
+        <span>GOOGLE SIGN-IN</span>
+        <i>◆</i>
+
+        <span>TIME BLOCKING</span>
+        <i>◆</i>
+
+        <span>HABIT STREAKS</span>
+        <i>◆</i>
+
+        <span>POMODORO</span>
+        <i>◆</i>
+
+        <span>AI ROUTINES</span>
+        <i>◆</i>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section
+    class="features section"
+    id="features"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-label reveal">
+            // MODULES
+        </div>
+
+
+        <h2 class="section-heading reveal">
+
+            Everything a disciplined day
+            <br>
+
+            needs.
+
+            <span>
+                Nothing it doesn't.
+            </span>
+
+        </h2>
+
+
+
+        <!-- FEATURE GRID -->
+
+        <div class="feature-grid">
+
+
+            <!-- ROUTINE -->
+
+            <article
+                class="feature-card large-card reveal"
+            >
+
+                <div class="feature-icon">
+                    ⛓
+                </div>
+
+
+                <h3>
+                    Routine Architect
+                </h3>
+
+
+                <p>
+                    Time-block your ideal week with
+                    repeatable blocks, categories and
+                    per-day schedules.
+                </p>
+
+
+                <div class="mini-schedule">
+
+                    <div class="schedule-row">
+
+                        <span>
+                            08:00
+                        </span>
+
+                        <div class="schedule-block blue-block">
+                            Deep work
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-row">
+
+                        <span>
+                            14:00
+                        </span>
+
+                        <div class="schedule-block orange-block">
+                            Algorithms
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-row">
+
+                        <span>
+                            18:00
+                        </span>
+
+                        <div class="schedule-block green-block">
+                            Read
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- HABITS -->
+
+            <article
+                class="feature-card reveal"
+            >
+
+                <div class="feature-icon">
+                    ♨
+                </div>
+
+                <h3>
+                    Habit Matrix
+                </h3>
+
+                <p>
+                    Streaks, 12-week heatmaps and
+                    7-day back-fill check-ins.
+                </p>
+
+            </article>
+
+
+
+            <!-- FOCUS -->
+
+            <article
+                class="feature-card reveal"
+            >
+
+                <div class="feature-icon">
+                    ◴
+                </div>
+
+                <h3>
+                    Focus Terminal
+                </h3>
+
+                <p>
+                    Pomodoro engine with chimes
+                    and a session log.
+                </p>
+
+            </article>
+
+
+
+            <!-- AI -->
+
+            <article
+                class="feature-card wide-card reveal"
+            >
+
+                <div class="feature-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    AI Planner
+                </h3>
+
+                <p>
+                    Describe your goal. Get a structured,
+                    time-fit routine in seconds — adopt
+                    it with one click.
+                </p>
+
+                <div class="ai-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </article>
+
+
+
+            <!-- ANALYTICS -->
+
+            <article
+                class="feature-card reveal"
+            >
+
+                <div class="feature-icon">
+                    ▥
+                </div>
+
+                <h3>
+                    Analytics Studio
+                </h3>
+
+                <p>
+                    Completion velocity, focus minutes
+                    and category balance.
+                </p>
+
+            </article>
+
+
+
+            <!-- THEMES -->
+
+            <article
+                class="feature-card reveal"
+            >
+
+                <div class="feature-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    Themes
+                </h3>
+
+                <p>
+                    Dark & light modes with four
+                    kinetic accent palettes.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WORKFLOW
+========================================================= -->
+
+<section
+    class="workflow section"
+    id="workflow"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="workflow-grid">
+
+
+            <!-- LEFT -->
+
+            <div class="workflow-left reveal">
+
+
+                <div class="section-label">
+                    // WORKFLOW
+                </div>
+
+
+                <h2 class="workflow-title">
+
+                    Three commands to a
+                    <br>
+
+                    better day.
+
+                </h2>
+
+
+                <div class="workflow-image">
+
+                    <div class="fake-desk">
+
+                        <div class="desk-monitor">
+
+                            <div class="monitor-screen">
+
+                                <div class="monitor-line"></div>
+
+                                <div class="monitor-line short"></div>
+
+                                <div class="monitor-line"></div>
+
+                                <div class="monitor-line tiny"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="keyboard"></div>
+
+                        <div class="mouse"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div class="workflow-steps">
+
+
+                <div
+                    class="workflow-step reveal"
+                    data-step="01"
+                >
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Design
+                        </h3>
+
+                        <p>
+                            Build your routine as time blocks,
+                            or let the AI Planner draft one
+                            from a single sentence.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="workflow-step reveal"
+                    data-step="02"
+                >
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Execute
+                        </h3>
+
+                        <p>
+                            Your Today view shows what's
+                            live now. Check off blocks,
+                            run focus sessions, hit your habits.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="workflow-step reveal"
+                    data-step="03"
+                >
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Iterate
+                        </h3>
+
+                        <p>
+                            Analytics surface your completion
+                            rate, focus hours and weak spots —
+                            refine and repeat.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AI PLANNER
+========================================================= -->
+
+<section
+    class="ai-section section"
+    id="ai-planner"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="ai-panel">
+
+
+            <div class="ai-panel-glow"></div>
+
+
+            <div class="ai-panel-left reveal">
+
+
+                <div class="section-label">
+                    // AI PLANNER
+                </div>
+
+
+                <h2>
+
+                    "Make me a morning
+                    routine for deep
+                    productivity."
+
+                </h2>
+
+
+                <p>
+
+                    Powered by AI. DailyRoutine turns
+                    intent into a structured,
+                    non-overlapping schedule you can
+                    adopt in one click.
+
+                </p>
+
+
+                <button
+                    class="primary-button"
+                    id="generatePlan"
+                >
+
+                    Generate my routine
+
+                    <span>
+                        ✦
+                    </span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- AI TERMINAL -->
+
+            <div class="ai-terminal reveal delay-2">
+
+                <div class="ai-terminal-header">
+
+                    <span>
+                        &gt; synthesizing routine_
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="ai-output"
+                    id="aiOutput"
+                >
+
+                    <div>
+                        <span class="terminal-plus">
+                            +
+                        </span>
+
+                        05:45 Wake, no phone · 10m
+                    </div>
+
+                    <div>
+                        <span class="terminal-plus">
+                            +
+                        </span>
+
+                        05:55 Cold shower + water · 15m
+                    </div>
+
+                    <div>
+                        <span class="terminal-plus">
+                            +
+                        </span>
+
+                        06:10 Journal top 3 goals · 15m
+                    </div>
+
+                    <div>
+                        <span class="terminal-plus">
+                            +
+                        </span>
+
+                        06:30 Deep work sprint · 90m
+                    </div>
+
+                    <div>
+                        <span class="terminal-plus">
+                            +
+                        </span>
+
+                        08:00 Workout · 45m
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <div class="section-container">
+
+        <div class="cta-line"></div>
+
+
+        <div class="cta-content">
+
+
+            <h2>
+
+                Stop planning to plan.
+
+                <span>
+                    Start compiling.
+                </span>
+
+            </h2>
+
+
+            <a
+                href="register.html"
+                class="primary-button"
+            >
+
+                Create free account
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="server-status">
+
+            <span class="server-dot"></span>
+
+            <span>
+                Spinning up Servers
+            </span>
+
+            <button>
+                ↗
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <div class="brand-icon">
+                ↯
+            </div>
+
+            <strong>
+                DAILYROUTINE
+            </strong>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#workflow">
+                How it works
+            </a>
+
+            <a href="#ai-planner">
+                AI Planner
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="footer-copy">
+
+            © 2026 DailyRoutine
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     DEMO MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="demoModal"
+>
+
+    <div class="demo-modal">
+
+        <button
+            class="modal-close"
+            id="closeDemo"
+        >
+            ×
+        </button>
+
+
+        <div class="demo-icon">
+            ✦
+        </div>
+
+
+        <span class="section-label">
+            // LIVE DEMO
+        </span>
+
+
+        <h2>
+            Your productivity
+            command center.
+        </h2>
+
+
+        <p>
+
+            Create routines, complete tasks,
+            build streaks and let AI structure
+            your day.
+
+        </p>
+
+
+        <a
+            href="dashboard.html"
+            class="primary-button"
+        >
+
+            Open Dashboard →
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+
+</body>
+
+</html>
